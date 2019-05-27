@@ -1,0 +1,16 @@
+function titleCase(str) {
+  let splitStr = str.split(" ");
+  for (let i=0; i < splitStr.length; i++){
+    splitStr[i] = replace(splitStr[i]);
+  }
+  str = splitStr.join(" ");
+  return str;
+}
+
+function replace(badStr) {
+  let test = badStr.slice(0,1).toUpperCase() + badStr.slice(1,badStr.length+1).toLowerCase();
+  console.log(test);
+  return test;
+}
+
+titleCase("I'm a liTTle tea pot") ==> "I'm a little tea pot"
