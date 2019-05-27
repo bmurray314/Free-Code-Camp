@@ -1,0 +1,10 @@
+function bouncer(arr) {
+  arr = arr.filter(isTrue);    
+  return arr;
+}
+
+function isTrue(value) {
+  return !!value;
+}
+
+bouncer([7, "ate", "", false, 9]);
