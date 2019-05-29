@@ -1,0 +1,26 @@
+function pairElement(str) {
+  let arr = [];
+  let dna = str.split("");
+  for (let i=0; i < dna.length; i++) {
+    arr.push([dna[i],dnaFunc(dna[i])]);
+  }
+  return arr;
+}
+
+function dnaFunc(val) {
+  switch(val) {
+    case "G":
+      return "C";
+      break;
+    case "C":
+      return "G";
+      break;
+    case "A":
+      return "T";
+      break;
+    default:
+      return "A";
+  }
+}
+
+pairElement("GCG");
