@@ -1,0 +1,14 @@
+function sumAll(arr) {
+  let min = Math.min(arr[0],arr[1]);
+  for(let i=1; i < Math.abs(arr[0]-arr[1]); i++){
+    arr.push(min+i);
+    console.log(arr);
+  }
+  return arr.reduce(sum,0);
+}
+
+function sum(total,num) {
+  return total+num;
+}
+
+sumAll([5, 10]);
