@@ -1,0 +1,18 @@
+function diffArray(arr1, arr2) {
+  var newArr = arr1.concat(arr2);
+  var otherArray = newArr;
+  const n = newArr.length;
+  for (let i=0; i < n; i++){
+    let wordArr = newArr.filter(word => word == otherArray[i]);
+    console.log(wordArr);
+    if(wordArr.length > 1) {
+      newArr = newArr.filter(word => word !== otherArray[i]);
+      console.log("New Arr = "+newArr);
+    }
+    console.log("Length = "+n+ " i = "+i);
+  }
+  console.log("Final Answer = "+newArr);
+  return newArr;
+}
+
+diffArray([1, 2, 3, 5, 10, 12], [1, 2, 3, 5, 6]);
