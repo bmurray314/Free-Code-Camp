@@ -1,0 +1,7 @@
+function destroyer(arr, ...args) {
+  let destroyArr = arr.filter(
+    (val) => !args.includes(val)
+  );
+  return destroyArr;
+}
+destroyer([1, 2, 3, 1, 2, 3,2], 2, 3,5,6);
