@@ -1,0 +1,15 @@
+function sumFibs(num) {
+  let seq1 = 0;
+  let seq2 = 1;
+  let oddFibs = [];
+  while (seq2 <= num){
+    let inc = seq1;
+    if(seq2 % 2 !== 0){
+      oddFibs.push(seq2);
+    }
+    seq1 = seq2;
+    seq2 = seq2 + inc;
+  }
+
+  return oddFibs.reduce((a,b) => a+b);
+}
