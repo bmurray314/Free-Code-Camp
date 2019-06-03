@@ -1,25 +1,22 @@
 function sumPrimes(num) {
   let arr = [];
   let i=num;
+  //creates an array of the numbers from 2 to num
   while (i > 1) {
     arr.push(i);
     i--;
   }
-  let placeholderArray = [];
+  let primeArray = []; //array to push all primes to
 
   for (let i in arr){
+    //test array is the array of numbers from 2 to num-1;
     let test = arr.filter((val) => val < arr[i]);
+    //if a number is not evenly divisible by every number below it, it is prime
+    //is a number is prime, it is pushed to the 'prime array
     if(test.every(e => {return arr[i] % e !==0})) {
-      placeholderArray.push(arr[i]);
+      primeArray.push(arr[i]);
     }
   }
   
-  console.log("Primes below "+num+" = "+placeholderArray);
-  return placeholderArray.reduce(sum,0);
+  return primeArray.reduce((a,b)=>a+b);
 }
-  function sum(total, num) {
-    return total + num;
-  }
-
-
-sumPrimes(30);
