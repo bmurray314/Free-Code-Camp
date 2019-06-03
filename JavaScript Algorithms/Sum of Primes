@@ -1,0 +1,25 @@
+function sumPrimes(num) {
+  let arr = [];
+  let i=num;
+  while (i > 1) {
+    arr.push(i);
+    i--;
+  }
+  let placeholderArray = [];
+
+  for (let i in arr){
+    let test = arr.filter((val) => val < arr[i]);
+    if(test.every(e => {return arr[i] % e !==0})) {
+      placeholderArray.push(arr[i]);
+    }
+  }
+  
+  console.log("Primes below "+num+" = "+placeholderArray);
+  return placeholderArray.reduce(sum,0);
+}
+  function sum(total, num) {
+    return total + num;
+  }
+
+
+sumPrimes(30);
